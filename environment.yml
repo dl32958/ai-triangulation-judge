@@ -45,6 +45,7 @@ dependencies:
       - anyio==4.12.1
       - async-timeout==5.0.1
       - attrs==25.4.0
+      - bleach==6.3.0
       - certifi==2026.2.25
       - charset-normalizer==3.4.4
       - click==8.3.1
@@ -63,6 +64,7 @@ dependencies:
       - huggingface-hub==1.5.0
       - idna==3.11
       - jinja2==3.1.6
+      - kaggle==1.7.4.5
       - markdown-it-py==4.0.0
       - markupsafe==3.0.2
       - mdurl==0.1.2
@@ -89,10 +91,12 @@ dependencies:
       - pandas==2.3.3
       - pillow==12.0.0
       - propcache==0.4.1
+      - protobuf==7.34.0
       - psutil==7.2.2
       - pyarrow==23.0.1
       - pygments==2.19.2
       - python-dateutil==2.9.0.post0
+      - python-slugify==8.0.4
       - pytz==2025.2
       - pyyaml==6.0.3
       - regex==2026.2.19
@@ -102,6 +106,7 @@ dependencies:
       - shellingham==1.5.4
       - six==1.17.0
       - sympy==1.14.0
+      - text-unidecode==1.3
       - tokenizers==0.22.2
       - torch==2.10.0+cu128
       - torchaudio==2.10.0+cu128
@@ -115,6 +120,7 @@ dependencies:
       - typing-extensions==4.15.0
       - tzdata==2025.3
       - urllib3==2.6.3
+      - webencodings==0.5.1
       - xxhash==3.6.0
       - yarl==1.22.0
 prefix: /home/lu.dong1/.conda/envs/expo-judge
