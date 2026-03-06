@@ -19,8 +19,5 @@ EXTRACTION GUIDELINES:
 - If multiple totals or dates appear, choose the one most clearly associated with the receipt or invoice (for example near labels like "TOTAL", "AMOUNT", "DATE", or "INVOICE DATE").
 - If the correct value cannot be confidently identified, return null.
 
-OUTPUT EXAMPLE:
-{"company":"<company_or_null>","date":"<date_or_null>","address":"<address_or_null>","total":"<total_or_null>"}
-
 OCR TEXT:
 {{OCR_TEXT}}
