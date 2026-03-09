@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X00016469669.jpg",
+  "extracted_fields": {
+    "company": "ABC HO TRADING",
+    "date": "09/01/2019",
+    "address": "No.28/4, JALAN HARMONI 3/2, TAMAN DESA HARMONI., 81100 JOHOR BAHRU JOHOR",
+    "total": null
+  },
+  "timings": {
+    "pass1_ocr_sec": 7.97,
+    "pass2_markdown_sec": 12.25,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 20.23
+  }
+}

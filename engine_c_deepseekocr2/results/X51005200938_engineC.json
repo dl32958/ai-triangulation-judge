@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X51005200938.jpg",
+  "extracted_fields": {
+    "company": "PERNIAGAAN ZHENG HUI",
+    "date": "12/02/2018",
+    "address": "NO.59 JALAN PERMAS 9/5, BANDAR BARU PERMAS JAYA, 81760 JOHOR BAHRU",
+    "total": "106.10"
+  },
+  "timings": {
+    "pass1_ocr_sec": 24.78,
+    "pass2_markdown_sec": 39.78,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 64.57
+  }
+}

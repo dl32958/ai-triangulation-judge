@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X00016469620.jpg",
+  "extracted_fields": {
+    "company": "MR D.I.Y. (JOHOR) SDN BHD",
+    "date": null,
+    "address": "LOT 1851-A & 1851-B, JALAN KPB 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR",
+    "total": null
+  },
+  "timings": {
+    "pass1_ocr_sec": 16.92,
+    "pass2_markdown_sec": 16.97,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 33.9
+  }
+}

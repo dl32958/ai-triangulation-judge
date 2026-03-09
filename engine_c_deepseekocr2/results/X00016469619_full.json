@@ -1,0 +1,318 @@
+{
+  "image_path": "data\\test\\img\\X00016469619.jpg",
+  "processed_at": "2026-03-08T18:54:25.305515",
+  "timings": {
+    "pass1_ocr_sec": 15.58,
+    "pass2_markdown_sec": 22.43,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 38.01
+  },
+  "pass1_ocr_text": "# tan woon yann\n\nINDAH GIFT & HOME DECO  \n27, JALAN DEDAP 13,  \nTAMAN JOHOR JAYA,  \n81100 JOHOR BAHRU, JOHOR.  \nTel: 07-3507405  Fax: 07-3558160  \n\n---\n\n## RECEIPT\n\n19/10/2018  20:49:59  #01  \nCashier: CN    Location/SP: 05 /0531  \n\n**HB: M026588**  \n**Room No: 01**   050100035279  \n\n---\n\n| Desc/Item    | Qty | Price  | Amt(RM)  |\n|---|---|---|---|\n| ST-PRIVILEGE CARD/GD INDAH |    |    |    |\n| 88888    | 1   | 10.00  | 10.00   |\n| GF-TABLE LAMP/STITCH <i>1> |    |    |    |\n| 62483    | 1   | 55.90  | 55.90   |\n| @DISC 10.00%    |    | -5.59   |    |\n| #Total Qty 2    |    |    |    |\n| TOTAL AMT......|    |    | 60.31   |\n| ROUNDING ADJ......|    |    | -0.01   |\n\n**RM 60.30**  \n**RM 70.30**  \n**RM 10.00**  \n\n---\n\nThank You ! Please Come Again !  \nGoods Sold Are Not Returnable  \nDealing In Wholesale And Retail.",
+  "pass2_markdown": "<|ref|>sub_title<|/ref|><|det|>[[160, 44, 744, 84]]<|/det|>\n## tan woon yann\n\n<|ref|>text<|/ref|><|det|>[[155, 161, 820, 289]]<|/det|>\nINDAH GIFT & HOME DECO\n27, JALAN DEDAP 13,\nTAMAN JOHOR JAYA,\n81100 JOHOR BAHRU, JOHOR.\nTel: 07-3507405 Fax: 07-3558160\n\n<|ref|>sub_title<|/ref|><|det|>[[392, 309, 564, 337]]<|/det|>\n## RECEIPT\n\n<|ref|>text<|/ref|><|det|>[[50, 359, 906, 415]]<|/det|>\n19/10/2018 20:49:59 #01\nCashier: CN Location/SP: 05 /0531\n\n<|ref|>text<|/ref|><|det|>[[50, 435, 310, 489]]<|/det|>\nMB: M026588\nRoom No: 01\n\n<|ref|>text<|/ref|><|det|>[[655, 459, 925, 488]]<|/det|>\n050100035279\n\n<|ref|>table<|/ref|><|det|>[[50, 508, 925, 833]]<|/det|>\n<table><tr><td>Desc/Item</td><td>Qty</td><td>Price</td><td>Amt(RM)</td></tr><tr><td>ST-PRIVILEGE CARD/GD</td><td>INDAH</td><td></td><td></td></tr><tr><td>88888</td><td>1</td><td>10.00</td><td>10.00</td></tr><tr><td>GF-TABLE LAMP/STITCH</td><td>&lt;i&gt;</td><td></td><td></td></tr><tr><td>62483</td><td>1</td><td>55.90</td><td>55.90</td></tr><tr><td>@DISC</td><td>10.00%</td><td>-5.59</td><td></td></tr><tr><td>#Total Qty</td><td>2</td><td></td><td></td></tr><tr><td>TOTAL AMT</td><td>RM</td><td>60.31</td><td></td></tr><tr><td>ROUNDING ADJ</td><td></td><td>-0.01</td><td></td></tr><tr><td></td><td>RM</td><td>60.30</td><td>✓</td></tr><tr><td>CASH</td><td>RM</td><td>70.30</td><td></td></tr><tr><td>CHANGE</td><td>RM</td><td>10.00</td><td></td></tr></table>\n\n<|ref|>text<|/ref|><|det|>[[130, 881, 830, 960]]<|/det|>\nThank You ! Please Come Again !\nGoods Sold Are Not Returnable\nDealing In Wholesale And Retail.",
+  "fields": {
+    "company": {
+      "value": "27, JALAN DEDAP 13,",
+      "reading_position": {
+        "line": 4,
+        "context": "INDAH GIFT & HOME DECO   | 27, JALAN DEDAP 13,   | TAMAN JOHOR JAYA,"
+      },
+      "markdown_context": "27, JALAN DEDAP 13,",
+      "bboxes_model": [
+        {
+          "x1": 0.155,
+          "y1": 0.161,
+          "x2": 0.82,
+          "y2": 0.289,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 201,
+          "y1": 565,
+          "x2": 218,
+          "y2": 565,
+          "source": "gt_box"
+        },
+        {
+          "x1": 196,
+          "y1": 615,
+          "x2": 222,
+          "y2": 615,
+          "source": "gt_box"
+        },
+        {
+          "x1": 157,
+          "y1": 663,
+          "x2": 185,
+          "y2": 663,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "date": {
+      "value": "19/10/2018",
+      "reading_position": {
+        "line": 13,
+        "context": "| 19/10/2018  20:49:59  #01   | Cashier: CN    Location/SP: 05 /0531"
+      },
+      "markdown_context": "19/10/2018 20:49:59 #01",
+      "bboxes_model": [
+        {
+          "x1": 0.05,
+          "y1": 0.359,
+          "x2": 0.906,
+          "y2": 0.415,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 16,
+          "y1": 364,
+          "x2": 257,
+          "y2": 364,
+          "source": "gt_box"
+        },
+        {
+          "x1": 201,
+          "y1": 565,
+          "x2": 218,
+          "y2": 565,
+          "source": "gt_box"
+        },
+        {
+          "x1": 196,
+          "y1": 615,
+          "x2": 222,
+          "y2": 615,
+          "source": "gt_box"
+        },
+        {
+          "x1": 157,
+          "y1": 663,
+          "x2": 185,
+          "y2": 663,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "address": {
+      "value": "TAMAN JOHOR JAYA, 81100 JOHOR BAHRU, JOHOR.",
+      "reading_position": {
+        "line": null,
+        "context": ""
+      },
+      "markdown_context": "",
+      "bboxes_model": [],
+      "bboxes_gt": [
+        {
+          "x1": 129,
+          "y1": 218,
+          "x2": 287,
+          "y2": 218,
+          "source": "gt_box"
+        },
+        {
+          "x1": 201,
+          "y1": 565,
+          "x2": 218,
+          "y2": 565,
+          "source": "gt_box"
+        },
+        {
+          "x1": 196,
+          "y1": 615,
+          "x2": 222,
+          "y2": 615,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "total": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "receipt_number": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "cashier": {
+      "value": "CN",
+      "reading_position": {
+        "line": 14,
+        "context": "19/10/2018  20:49:59  #01   | Cashier: CN    Location/SP: 05 /0531   |"
+      },
+      "markdown_context": "Cashier: CN Location/SP: 05 /0531",
+      "bboxes_model": [
+        {
+          "x1": 0.05,
+          "y1": 0.359,
+          "x2": 0.906,
+          "y2": 0.415,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 25,
+          "y1": 395,
+          "x2": 132,
+          "y2": 395,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "member": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "subtotal": {
+      "value": "60.31",
+      "reading_position": {
+        "line": 29,
+        "context": "| #Total Qty 2    |    |    |    | | | TOTAL AMT......|    |    | 60.31   | | | ROUNDING ADJ......|    |    | -0.01   |"
+      },
+      "markdown_context": "<table><tr><td>Desc/Item</td><td>Qty</td><td>Price</td><td>Amt(RM)</td></tr><tr><td>ST-PRIVILEGE CARD/GD</td><td>INDAH</td><td></td><td></td></tr><tr><td>88888</td><td>1</td><td>10.00</td><td>10.00</td></tr><tr><td>GF-TABLE LAMP/STITCH</td><td>&lt;i&gt;</td><td></td><td></td></tr><tr><td>62483</td><td>1</td><td>55.90</td><td>55.90</td></tr><tr><td>@DISC</td><td>10.00%</td><td>-5.59</td><td></td></tr><tr><td>#Total Qty</td><td>2</td><td></td><td></td></tr><tr><td>TOTAL AMT</td><td>RM</td><td>60.31</td><td></td></tr><tr><td>ROUNDING ADJ</td><td></td><td>-0.01</td><td></td></tr><tr><td></td><td>RM</td><td>60.30</td><td>✓</td></tr><tr><td>CASH</td><td>RM</td><td>70.30</td><td></td></tr><tr><td>CHANGE</td><td>RM</td><td>10.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.05,
+          "y1": 0.508,
+          "x2": 0.925,
+          "y2": 0.833,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 201,
+          "y1": 565,
+          "x2": 218,
+          "y2": 565,
+          "source": "gt_box"
+        },
+        {
+          "x1": 196,
+          "y1": 615,
+          "x2": 222,
+          "y2": 615,
+          "source": "gt_box"
+        },
+        {
+          "x1": 325,
+          "y1": 691,
+          "x2": 375,
+          "y2": 691,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "rounding": {
+      "value": "-0.01",
+      "reading_position": {
+        "line": 30,
+        "context": "| TOTAL AMT......|    |    | 60.31   | | | ROUNDING ADJ......|    |    | -0.01   | |"
+      },
+      "markdown_context": "<table><tr><td>Desc/Item</td><td>Qty</td><td>Price</td><td>Amt(RM)</td></tr><tr><td>ST-PRIVILEGE CARD/GD</td><td>INDAH</td><td></td><td></td></tr><tr><td>88888</td><td>1</td><td>10.00</td><td>10.00</td></tr><tr><td>GF-TABLE LAMP/STITCH</td><td>&lt;i&gt;</td><td></td><td></td></tr><tr><td>62483</td><td>1</td><td>55.90</td><td>55.90</td></tr><tr><td>@DISC</td><td>10.00%</td><td>-5.59</td><td></td></tr><tr><td>#Total Qty</td><td>2</td><td></td><td></td></tr><tr><td>TOTAL AMT</td><td>RM</td><td>60.31</td><td></td></tr><tr><td>ROUNDING ADJ</td><td></td><td>-0.01</td><td></td></tr><tr><td></td><td>RM</td><td>60.30</td><td>✓</td></tr><tr><td>CASH</td><td>RM</td><td>70.30</td><td></td></tr><tr><td>CHANGE</td><td>RM</td><td>10.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.05,
+          "y1": 0.508,
+          "x2": 0.925,
+          "y2": 0.833,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 201,
+          "y1": 565,
+          "x2": 218,
+          "y2": 565,
+          "source": "gt_box"
+        },
+        {
+          "x1": 196,
+          "y1": 615,
+          "x2": 222,
+          "y2": 615,
+          "source": "gt_box"
+        },
+        {
+          "x1": 319,
+          "y1": 714,
+          "x2": 379,
+          "y2": 714,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "cash": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "change": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "line_items": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    }
+  },
+  "ground_truth": {
+    "company": "INDAH GIFT & HOME DECO",
+    "date": "19/10/2018",
+    "address": "27, JALAN DEDAP 13, TAMAN JOHOR JAYA, 81100 JOHOR BAHRU, JOHOR.",
+    "total": "60.30"
+  },
+  "evaluation": {
+    "company": {
+      "gt": "INDAH GIFT & HOME DECO",
+      "pred": "27, JALAN DEDAP 13,",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "date": {
+      "gt": "19/10/2018",
+      "pred": "19/10/2018",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "address": {
+      "gt": "27, JALAN DEDAP 13, TAMAN JOHOR JAYA, 81100 JOHOR BAHRU, JOHOR.",
+      "pred": "TAMAN JOHOR JAYA, 81100 JOHOR BAHRU, JOHOR.",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "total": {
+      "gt": "60.30",
+      "pred": null,
+      "exact_match": false,
+      "norm_match": false
+    },
+    "_score": {
+      "correct": 1,
+      "total": 4,
+      "accuracy": 0.25
+    }
+  }
+}

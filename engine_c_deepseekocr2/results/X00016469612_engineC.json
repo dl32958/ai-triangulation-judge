@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X00016469612.jpg",
+  "extracted_fields": {
+    "company": "BOOK TA_K (TAMAN DAYA) SDN BHD",
+    "date": "25/12/2018",
+    "address": "NO.5: 55,57 & 59, JALAN SAGU 18, TAMAN DAYA, 81100 JOHOR BAHRU, JOHOR.",
+    "total": "9.00"
+  },
+  "timings": {
+    "pass1_ocr_sec": 14.51,
+    "pass2_markdown_sec": 24.16,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 38.67
+  }
+}

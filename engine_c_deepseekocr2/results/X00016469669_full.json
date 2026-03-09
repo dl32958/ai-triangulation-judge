@@ -1,0 +1,252 @@
+{
+  "image_path": "data\\test\\img\\X00016469669.jpg",
+  "processed_at": "2026-03-08T18:56:27.159072",
+  "timings": {
+    "pass1_ocr_sec": 7.97,
+    "pass2_markdown_sec": 12.25,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 20.23
+  },
+  "pass1_ocr_text": "tan chay yee  \nABC HO TRADING  \nNo.28/4, JALAN HARMONI 3/2,  \nTAMAN DESA HARMONI.  \n81100 JOHOR BAHRU JOHOR  \n07-355 2616  \n\nCash Bill: 01-143008  \nDate: 09/01/2019 8:01:11 PM  \nCashier: 01  \n\n| Description    | Qty | Price  | Amount  |\n|---|---|---|---|\n| Plastic    | 2   | 15.50  | 31.00  |\n|    |    |    |    |\n| Total    |    |    | 31.00  |\n| Total Amount:    |    |    | 31.00  |\n| Cash Received:    |    |    | 101.00 |\n| Change:    |    |    | 70.00  |\n\n*Goods Sold are non-refundable*  \n***Thank You***  \n***Please Come Again***  \n\n3/-00",
+  "pass2_markdown": "<|ref|>sub_title<|/ref|><|det|>[[315, 72, 777, 137]]<|/det|>\n## tan chay yee\n\n<|ref|>text<|/ref|><|det|>[[230, 144, 710, 333]]<|/det|>\nABC HO TRADING:\nNo.284, JALAN HARMONI 3/2,\nTAMAN DESA HARMONI.\n81100 JOHOR BAHRU JOHOR\n07-355 2616\n\n<|ref|>text<|/ref|><|det|>[[52, 395, 444, 432]]<|/det|>\nCash Bill : 01-143008\n\n<|ref|>text<|/ref|><|det|>[[52, 435, 650, 472]]<|/det|>\nDate : 09/01/2019 8:01:11 PM\n\n<|ref|>text<|/ref|><|det|>[[52, 475, 315, 510]]<|/det|>\nCashier : 01\n\n<|ref|>table<|/ref|><|det|>[[45, 510, 912, 950]]<|/det|>\n<table><tr><td>Description</td><td>Qty</td><td>Price</td><td>Amount</td></tr><tr><td></td><td></td><td>RM</td><td>RM</td></tr><tr><td>Plastic</td><td>2</td><td>15.50</td><td>31.00</td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td>Total :</td><td></td><td>31.00</td></tr><tr><td></td><td>Total Amount :</td><td></td><td>31.00</td></tr><tr><td></td><td>Cash Received :</td><td></td><td>101.00</td></tr><tr><td></td><td>Change :</td><td></td><td>70.00</td></tr><tr><td></td><td>*Goods Sold are non-refundable*</td><td></td><td></td></tr><tr><td></td><td>***Thank You***</td><td></td><td>3/-00</td></tr></table>",
+  "fields": {
+    "company": {
+      "value": "ABC HO TRADING",
+      "reading_position": {
+        "line": 2,
+        "context": "tan chay yee   | ABC HO TRADING   | No.28/4, JALAN HARMONI 3/2,"
+      },
+      "markdown_context": "ABC HO TRADING:",
+      "bboxes_model": [
+        {
+          "x1": 0.23,
+          "y1": 0.144,
+          "x2": 0.71,
+          "y2": 0.333,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 129,
+          "y1": 86,
+          "x2": 309,
+          "y2": 86,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "date": {
+      "value": "09/01/2019",
+      "reading_position": {
+        "line": 9,
+        "context": "Cash Bill: 01-143008   | Date: 09/01/2019 8:01:11 PM   | Cashier: 01"
+      },
+      "markdown_context": "Date : 09/01/2019 8:01:11 PM",
+      "bboxes_model": [
+        {
+          "x1": 0.052,
+          "y1": 0.435,
+          "x2": 0.65,
+          "y2": 0.472,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 118,
+          "y1": 263,
+          "x2": 301,
+          "y2": 263,
+          "source": "gt_box"
+        },
+        {
+          "x1": 117,
+          "y1": 288,
+          "x2": 144,
+          "y2": 288,
+          "source": "gt_box"
+        },
+        {
+          "x1": 228,
+          "y1": 361,
+          "x2": 248,
+          "y2": 361,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "address": {
+      "value": "No.28/4, JALAN HARMONI 3/2, TAMAN DESA HARMONI., 81100 JOHOR BAHRU JOHOR",
+      "reading_position": {
+        "line": null,
+        "context": ""
+      },
+      "markdown_context": "",
+      "bboxes_model": [],
+      "bboxes_gt": [
+        {
+          "x1": 125,
+          "y1": 135,
+          "x2": 309,
+          "y2": 135,
+          "source": "gt_box"
+        },
+        {
+          "x1": 104,
+          "y1": 158,
+          "x2": 330,
+          "y2": 158,
+          "source": "gt_box"
+        },
+        {
+          "x1": 277,
+          "y1": 337,
+          "x2": 315,
+          "y2": 337,
+          "source": "gt_box"
+        },
+        {
+          "x1": 347,
+          "y1": 337,
+          "x2": 387,
+          "y2": 337,
+          "source": "gt_box"
+        },
+        {
+          "x1": 228,
+          "y1": 361,
+          "x2": 248,
+          "y2": 361,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "total": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "receipt_number": {
+      "value": "01-143008",
+      "reading_position": {
+        "line": 8,
+        "context": "| Cash Bill: 01-143008   | Date: 09/01/2019 8:01:11 PM"
+      },
+      "markdown_context": "Cash Bill : 01-143008",
+      "bboxes_model": [
+        {
+          "x1": 0.052,
+          "y1": 0.395,
+          "x2": 0.444,
+          "y2": 0.432,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 118,
+          "y1": 242,
+          "x2": 202,
+          "y2": 242,
+          "source": "gt_box"
+        },
+        {
+          "x1": 117,
+          "y1": 288,
+          "x2": 144,
+          "y2": 288,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "cashier": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "member": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "subtotal": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "rounding": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "cash": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "change": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "line_items": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    }
+  },
+  "ground_truth": {
+    "company": "ABC HO TRADING",
+    "date": "09/01/2019",
+    "address": "NO.2&4, JALAN HARMONI 3/2, TAMAN DESA HARMONI. 81100 JOHOR BAHRU JOHOR",
+    "total": "31.00"
+  },
+  "evaluation": {
+    "company": {
+      "gt": "ABC HO TRADING",
+      "pred": "ABC HO TRADING",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "date": {
+      "gt": "09/01/2019",
+      "pred": "09/01/2019",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "address": {
+      "gt": "NO.2&4, JALAN HARMONI 3/2, TAMAN DESA HARMONI. 81100 JOHOR BAHRU JOHOR",
+      "pred": "No.28/4, JALAN HARMONI 3/2, TAMAN DESA HARMONI., 81100 JOHOR BAHRU JOHOR",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "total": {
+      "gt": "31.00",
+      "pred": null,
+      "exact_match": false,
+      "norm_match": false
+    },
+    "_score": {
+      "correct": 2,
+      "total": 4,
+      "accuracy": 0.5
+    }
+  }
+}
