@@ -1,0 +1,515 @@
+{
+  "image_path": "data\\test\\img\\X00016469622.jpg",
+  "processed_at": "2026-03-08T18:55:33.989543",
+  "timings": {
+    "pass1_ocr_sec": 14.44,
+    "pass2_markdown_sec": 20.29,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 34.73
+  },
+  "pass1_ocr_text": "# tan woon yann\n\n## YONGFATT ENTERPRISE  \n(JM0517726)  \nNO. 122,124 JALAN DEDAP 13  \n81100 JOHOR BAHRU  \n\n**TEL**: 07-3523888  \n**GST ID**: 000849813504  \n\n**SIMPLIFIED TAX INVOICE**  \n\n| CASH    |    |    |    |    |    |  \n|---|---|---|---|---|---|  \n| Doc No    | CS00031663    | Date    | 25/12/2018 |    |    |  \n| Cashier    | USER    | Time    | 12:31:00  |    |    |  \n| Salesperson  | Ref.    |    |    |    |    |  \n\n| Item    | Qty | S/Price | Amount | Tax  |  \n|---|---|---|---|---|  \n| E8318    | 1   | 80.91   | 80.91  | SR   |  \n\n**ELEGANT SOH TR BAG 15**  \nTotal Qty: 1  \n80.91  \n\n**Total Sales (Excluding GST)**: 80.91  \n\nDiscount: 0.00  \n\n**Total GST**: 0.00  \n\nRounding: -0.01  \n\n**Total Sales (Inclusive of GST)**: 80.90  \n\n**CASH**: 100.00  \n**Change**: 19.10  \n\n**80.90**  \n\n---\n\n## GST SUMMARY  \n\n| Tax Code | % | Amt (RM) | Tax (RM) |  \n|---|---|---|---|  \n| SR    | 0  | 80.91    | 0.00    |  \n\n**Total**: 80.91 0.00  \n\n---\n\n**GOODS SOLD ARE NOT REFUNDABLE. ONLY RECEIPT SHOWN.**",
+  "pass2_markdown": "<|ref|>sub_title<|/ref|><|det|>[[202, 45, 770, 84]]<|/det|>\n## tan woon yann\n\n<|ref|>sub_title<|/ref|><|det|>[[175, 112, 810, 142]]<|/det|>\n## YONGFATT ENTERPRISE\n\n<|ref|>text<|/ref|><|det|>[[220, 145, 770, 218]]<|/det|>\n(JM0517726)\nNO.122.124 JALAN DEDAP 13\n81100 JOHOR BAHRU\n\n<|ref|>text<|/ref|><|det|>[[320, 231, 660, 258]]<|/det|>\nTEL 07-3523888\n\n<|ref|>text<|/ref|><|det|>[[277, 265, 710, 291]]<|/det|>\nGST ID: 000849813504\n\n<|ref|>sub_title<|/ref|><|det|>[[230, 293, 757, 319]]<|/det|>\n## SIMPLIFIED TAX INVOICE\n\n<|ref|>table<|/ref|><|det|>[[30, 333, 965, 944]]<|/det|>\n<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+  "fields": {
+    "company": {
+      "value": "NO. 122,124 JALAN DEDAP 13",
+      "reading_position": {
+        "line": 5,
+        "context": "(JM0517726)   | NO. 122,124 JALAN DEDAP 13   | 81100 JOHOR BAHRU"
+      },
+      "markdown_context": "",
+      "bboxes_model": [],
+      "bboxes_gt": [
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "date": {
+      "value": "25/12/2018",
+      "reading_position": {
+        "line": 15,
+        "context": "|---|---|---|---|---|---|   | | Doc No    | CS00031663    | Date    | 25/12/2018 |    |    |   | | Cashier    | USER    | Time    | 12:31:00  |    |    |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 329,
+          "y1": 341,
+          "x2": 415,
+          "y2": 341,
+          "source": "gt_box"
+        },
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "address": {
+      "value": "81100 JOHOR BAHRU",
+      "reading_position": {
+        "line": 6,
+        "context": "NO. 122,124 JALAN DEDAP 13   | 81100 JOHOR BAHRU   |"
+      },
+      "markdown_context": "81100 JOHOR BAHRU",
+      "bboxes_model": [
+        {
+          "x1": 0.22,
+          "y1": 0.145,
+          "x2": 0.77,
+          "y2": 0.218,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 136,
+          "y1": 184,
+          "x2": 316,
+          "y2": 184,
+          "source": "gt_box"
+        },
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "total": {
+      "value": "80.91",
+      "reading_position": {
+        "line": 21,
+        "context": "|---|---|---|---|---|   | | E8318    | 1   | 80.91   | 80.91  | SR   |   |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 234,
+          "y1": 459,
+          "x2": 286,
+          "y2": 459,
+          "source": "gt_box"
+        },
+        {
+          "x1": 328,
+          "y1": 457,
+          "x2": 380,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 329,
+          "y1": 509,
+          "x2": 380,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 334,
+          "y1": 546,
+          "x2": 375,
+          "y2": 546,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        },
+        {
+          "x1": 258,
+          "y1": 814,
+          "x2": 301,
+          "y2": 814,
+          "source": "gt_box"
+        },
+        {
+          "x1": 256,
+          "y1": 844,
+          "x2": 301,
+          "y2": 844,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "receipt_number": {
+      "value": "CS00031663",
+      "reading_position": {
+        "line": 15,
+        "context": "|---|---|---|---|---|---|   | | Doc No    | CS00031663    | Date    | 25/12/2018 |    |    |   | | Cashier    | USER    | Time    | 12:31:00  |    |    |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 141,
+          "y1": 337,
+          "x2": 251,
+          "y2": 337,
+          "source": "gt_box"
+        },
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "cashier": {
+      "value": "USER",
+      "reading_position": {
+        "line": 16,
+        "context": "| Doc No    | CS00031663    | Date    | 25/12/2018 |    |    |   | | Cashier    | USER    | Time    | 12:31:00  |    |    |   | | Salesperson  | Ref.    |    |    |    |    |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 143,
+          "y1": 368,
+          "x2": 191,
+          "y2": 368,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "member": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "subtotal": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "rounding": {
+      "value": "-0.01",
+      "reading_position": {
+        "line": 33,
+        "context": "| Rounding: -0.01   |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 333,
+          "y1": 626,
+          "x2": 386,
+          "y2": 626,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "cash": {
+      "value": "100.00",
+      "reading_position": {
+        "line": 37,
+        "context": "| **CASH**: 100.00   | **Change**: 19.10"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 342,
+          "y1": 572,
+          "x2": 377,
+          "y2": 572,
+          "source": "gt_box"
+        },
+        {
+          "x1": 336,
+          "y1": 597,
+          "x2": 385,
+          "y2": 597,
+          "source": "gt_box"
+        },
+        {
+          "x1": 326,
+          "y1": 689,
+          "x2": 377,
+          "y2": 689,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        },
+        {
+          "x1": 371,
+          "y1": 815,
+          "x2": 406,
+          "y2": 815,
+          "source": "gt_box"
+        },
+        {
+          "x1": 371,
+          "y1": 847,
+          "x2": 405,
+          "y2": 847,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "change": {
+      "value": "19.10",
+      "reading_position": {
+        "line": 38,
+        "context": "**CASH**: 100.00   | **Change**: 19.10   |"
+      },
+      "markdown_context": "<table><tr><td colspan=\"5\">CASH</td></tr><tr><td>Doc No</td><td>CS00031663</td><td>Date</td><td>25/12/2018</td><td></td></tr><tr><td>Cashier</td><td>USER</td><td>Time</td><td>12:31:00</td><td></td></tr><tr><td>Salesperson</td><td></td><td>Ref.</td><td></td><td></td></tr><tr><td>Item</td><td>Qty</td><td>S/Price</td><td>Amount</td><td>Tax</td></tr><tr><td>E8318</td><td>1</td><td>80.91</td><td>80.91</td><td>SR</td></tr><tr><td colspan=\"5\">ELEGANT SOH TR BAG 15</td></tr><tr><td>Total Qty</td><td>1</td><td>80.91</td><td></td><td></td></tr><tr><td>Total Sales (Excluding GST)</td><td></td><td>60.91</td><td></td><td></td></tr><tr><td>Discount</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Total GST</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Rounding</td><td></td><td>-0.01</td><td></td><td></td></tr><tr><td>Total Sales (Inclusive of GST)</td><td></td><td>80.90</td><td></td><td></td></tr><tr><td>CASH</td><td></td><td>100.00</td><td></td><td></td></tr><tr><td>Change</td><td></td><td>19.10</td><td></td><td></td></tr><tr><td colspan=\"5\">GST SUMMARY</td></tr><tr><td>Tax Code</td><td>%</td><td>Amt (RM)</td><td>Tax (RM)</td><td></td></tr><tr><td>SR</td><td>0</td><td>80.91</td><td>0.00</td><td></td></tr><tr><td>Total</td><td></td><td>80.91</td><td>0.00</td><td></td></tr></table>",
+      "bboxes_model": [
+        {
+          "x1": 0.03,
+          "y1": 0.333,
+          "x2": 0.965,
+          "y2": 0.944,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 172,
+          "y1": 457,
+          "x2": 194,
+          "y2": 457,
+          "source": "gt_box"
+        },
+        {
+          "x1": 175,
+          "y1": 509,
+          "x2": 192,
+          "y2": 509,
+          "source": "gt_box"
+        },
+        {
+          "x1": 335,
+          "y1": 713,
+          "x2": 378,
+          "y2": 713,
+          "source": "gt_box"
+        },
+        {
+          "x1": 168,
+          "y1": 813,
+          "x2": 191,
+          "y2": 813,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "line_items": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    }
+  },
+  "ground_truth": {
+    "company": "YONGFATT ENTERPRISE",
+    "date": "25/12/2018",
+    "address": "NO 122.124. JALAN DEDAP 13 81100 JOHOR BAHRU",
+    "total": "80.90"
+  },
+  "evaluation": {
+    "company": {
+      "gt": "YONGFATT ENTERPRISE",
+      "pred": "NO. 122,124 JALAN DEDAP 13",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "date": {
+      "gt": "25/12/2018",
+      "pred": "25/12/2018",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "address": {
+      "gt": "NO 122.124. JALAN DEDAP 13 81100 JOHOR BAHRU",
+      "pred": "81100 JOHOR BAHRU",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "total": {
+      "gt": "80.90",
+      "pred": "80.91",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "_score": {
+      "correct": 1,
+      "total": 4,
+      "accuracy": 0.25
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "image_path": "data\\test\\img\\X51005230617.jpg",
+  "processed_at": "2026-03-08T18:59:26.173917",
+  "timings": {
+    "pass1_ocr_sec": 13.1,
+    "pass2_markdown_sec": 12.28,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 25.38
+  },
+  "pass1_ocr_text": "1950\n\nGerbang Alaf Restaurants Sdn Bhd  \n(65351-M)  \nformerly known as  \nGolden Arches Restaurants Sdn Bhd  \nLicensee of McDonald's  \nLevel 6, Bangunan TH, Damansara Uptown3  \nNo.3, Jalan SS21/39, 47400 Petaling Jaya  \nSelangor  \n\n(GST ID No: 000504664064)  \nMcDonald's BHP Taman Melawati (#328)  \nTel No: 03-4162-2318  \nTAX INVOICE  \n\nMFY Side 1  \n\nINV# 003281900229170  \nORD #50 -REG #19- 18/01/2018 10:27:03  \nQTY ITEM    TOTAL  \n2 ChicMcMuffin    11.00  \n1 M Porridge    5.60  \n1 BM 2HotCakes    10.00  \n1 L Coke    1.00  \n\nTakeOut Total (incl GST)    26.60  \nTotal Rounded    26.60  \nCash Tendered    100.00  \nChange    73.40  \n\nTOTAL INCLUDES 6% GST    1.51  \n\n---\n\nWe'd love to hear your feedback!  \n\n[www.mcdefeedback.com.my](http://www.mcdefeedback.com.my)  \nOR  \n[Download My McD Feedback from Google Play/App Store](https://www.google.com/store)  \n\nto share your experience  \n\n---\n\nThank You and Please Come Again.  \nCustomer Service Hotline: 03-2726-5600",
+  "pass2_markdown": "<|ref|>text<|/ref|><|det|>[[0, 0, 999, 998]]<|/det|>\n1950\n\nGerbang Alaf Restaurants Sdn Bhd (65351-M)\n\nformerly known as Golden Arches Restaurants Sdn Bhd Licensee of McDonald's Level 6, Bangunan TH, Damansara Uptown3 No.3, Jalan SS21/39, 47400 Petaling Jaya Selangor (GST ID No: 000504664064)\n\nMcDonald's BHP Taman Melawati (#328)\n\nTel No. 03-4162-2318\n\nTAX INVOICE\n\nMFY Side 1\n\nINV# 003281900229170\n\nORD #50 -REG #19- 18/01/2018 10:27:03\n\nQTY ITEM TOTAL\n\n2 ChicMcMuffin 11.00\n\n1 M Porridge 5.60\n\n1 BM 2HotCakes 10.00\n\n1 L Coke\n\nTakeOut Total (incl GST) 26.60\n\nTotal Rounded 26.60\n\nCash Tendered 100.00\n\nChange 73.40\n\nTOTAL INCLUDES 6% GST 1.51\n\nWe'd love to hear your feedback!\n\nsit www.mcdfeedback.com.my\n\nOR\n\nDownload My McD Feedback from Google Play/App Store\n\nto share your experience\n\nThank You and Please Come Again.\n\nCustomer Service Hotline : 03-2726-5600",
+  "fields": {
+    "company": {
+      "value": "Gerbang Alaf Restaurants Sdn Bhd",
+      "reading_position": {
+        "line": 3,
+        "context": "| Gerbang Alaf Restaurants Sdn Bhd   | (65351-M)"
+      },
+      "markdown_context": "Gerbang Alaf Restaurants Sdn Bhd (65351-M)",
+      "bboxes_model": [
+        {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.999,
+          "y2": 0.998,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 45,
+          "y1": 197,
+          "x2": 477,
+          "y2": 197,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "date": {
+      "value": "18/01/2018",
+      "reading_position": {
+        "line": 20,
+        "context": "INV# 003281900229170   | ORD #50 -REG #19- 18/01/2018 10:27:03   | QTY ITEM    TOTAL"
+      },
+      "markdown_context": "ORD #50 -REG #19- 18/01/2018 10:27:03",
+      "bboxes_model": [
+        {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.999,
+          "y2": 0.998,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 4,
+          "y1": 715,
+          "x2": 501,
+          "y2": 715,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "address": {
+      "value": "Level 6, Bangunan TH, Damansara Uptown3, No.3, Jalan SS21/39, 47400 Petaling Jaya, Selangor, McDonald's BHP Taman Melawati (#328)",
+      "reading_position": {
+        "line": null,
+        "context": ""
+      },
+      "markdown_context": "",
+      "bboxes_model": [],
+      "bboxes_gt": [
+        {
+          "x1": 6,
+          "y1": 358,
+          "x2": 530,
+          "y2": 358,
+          "source": "gt_box"
+        },
+        {
+          "x1": 204,
+          "y1": 423,
+          "x2": 316,
+          "y2": 423,
+          "source": "gt_box"
+        },
+        {
+          "x1": 243,
+          "y1": 1304,
+          "x2": 274,
+          "y2": 1304,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "total": {
+      "value": "26.60",
+      "reading_position": {
+        "line": 27,
+        "context": "| TakeOut Total (incl GST)    26.60   | Total Rounded    26.60"
+      },
+      "markdown_context": "TakeOut Total (incl GST) 26.60",
+      "bboxes_model": [
+        {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.999,
+          "y2": 0.998,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 457,
+          "y1": 945,
+          "x2": 527,
+          "y2": 945,
+          "source": "gt_box"
+        },
+        {
+          "x1": 456,
+          "y1": 977,
+          "x2": 528,
+          "y2": 977,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "receipt_number": {
+      "value": "003281900229170",
+      "reading_position": {
+        "line": 19,
+        "context": "| INV# 003281900229170   | ORD #50 -REG #19- 18/01/2018 10:27:03"
+      },
+      "markdown_context": "INV# 003281900229170",
+      "bboxes_model": [
+        {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.999,
+          "y2": 0.998,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 6,
+          "y1": 681,
+          "x2": 275,
+          "y2": 681,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "cashier": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "member": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "subtotal": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "rounding": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "cash": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    },
+    "change": {
+      "value": "73.40",
+      "reading_position": {
+        "line": 30,
+        "context": "Cash Tendered    100.00   | Change    73.40   |"
+      },
+      "markdown_context": "Change 73.40",
+      "bboxes_model": [
+        {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.999,
+          "y2": 0.998,
+          "source": "pass2_det"
+        }
+      ],
+      "bboxes_gt": [
+        {
+          "x1": 458,
+          "y1": 1043,
+          "x2": 526,
+          "y2": 1043,
+          "source": "gt_box"
+        }
+      ]
+    },
+    "line_items": {
+      "value": null,
+      "reading_position": null,
+      "markdown_context": null,
+      "bboxes_model": [],
+      "bboxes_gt": []
+    }
+  },
+  "ground_truth": {
+    "company": "GERBANG ALAF RESTAURANTS SDN BHD",
+    "date": "18/01/2018",
+    "address": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+    "total": "26.60"
+  },
+  "evaluation": {
+    "company": {
+      "gt": "GERBANG ALAF RESTAURANTS SDN BHD",
+      "pred": "Gerbang Alaf Restaurants Sdn Bhd",
+      "exact_match": false,
+      "norm_match": true
+    },
+    "date": {
+      "gt": "18/01/2018",
+      "pred": "18/01/2018",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "address": {
+      "gt": "LEVEL 6, BANGUNAN TH, DAMANSARA UPTOWN3 NO.3, JALAN SS21/39,47400 PETALING JAYA SELANGOR",
+      "pred": "Level 6, Bangunan TH, Damansara Uptown3, No.3, Jalan SS21/39, 47400 Petaling Jaya, Selangor, McDonald's BHP Taman Melawati (#328)",
+      "exact_match": false,
+      "norm_match": false
+    },
+    "total": {
+      "gt": "26.60",
+      "pred": "26.60",
+      "exact_match": true,
+      "norm_match": true
+    },
+    "_score": {
+      "correct": 3,
+      "total": 4,
+      "accuracy": 0.75
+    }
+  }
+}

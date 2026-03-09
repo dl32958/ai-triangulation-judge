@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X00016469623.jpg",
+  "extracted_fields": {
+    "company": "MR D.I.Y. (M) SDN BHD",
+    "date": null,
+    "address": "101 1051-A & 1051-B, JALAN KP8 6, KAWASAN PERINDUSTRIAN BALAKONG, 43300 SERI KEMBANGAN, SELANGOR",
+    "total": "30.91"
+  },
+  "timings": {
+    "pass1_ocr_sec": 14.85,
+    "pass2_markdown_sec": 18.04,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 32.9
+  }
+}

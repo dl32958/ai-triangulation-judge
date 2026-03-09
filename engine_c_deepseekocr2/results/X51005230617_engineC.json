@@ -1,0 +1,16 @@
+{
+  "engine": "DeepSeek-OCR-2",
+  "source_file": "data\\test\\img\\X51005230617.jpg",
+  "extracted_fields": {
+    "company": "Gerbang Alaf Restaurants Sdn Bhd",
+    "date": "18/01/2018",
+    "address": "Level 6, Bangunan TH, Damansara Uptown3, No.3, Jalan SS21/39, 47400 Petaling Jaya, Selangor, McDonald's BHP Taman Melawati (#328)",
+    "total": "26.60"
+  },
+  "timings": {
+    "pass1_ocr_sec": 13.1,
+    "pass2_markdown_sec": 12.28,
+    "pass3_coords_sec": 0.0,
+    "total_sec": 25.38
+  }
+}
