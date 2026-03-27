@@ -61,6 +61,107 @@ def constraints_engine_b_node(state: PipelineState) -> PipelineState:
     return {"constraints": constraints}
 
 
+def _run_constraints_and_extraction_for_engine(
+    state: PipelineState,
+    *,
+    engine_name: str,
+    model_path: str,
+    build_constraints_prompt,
+) -> PipelineState:
+    tokenizer, model = load_model_and_tokenizer(model_path)
+    try:
+        constraints_prompt = build_constraints_prompt(state["raw_text"], state["doc_category"], state["fields"])
+        constraints_response = run_chat_inference(model, tokenizer, constraints_prompt, max_new_tokens=800)
+
+        extraction_started_at = time.time()
+        extraction = {
+            "field_extraction": {},
+            "evidence_trace": {},
+            "reasoning": {},
+            "engine_metrics": {
+                "elapsed_seconds": 0.0,
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+                "field_count": len(state["fields"]),
+            },
+        }
+
+        for field in state["fields"]:
+            prompt = build_single_extraction_prompt(
+                state["raw_text"],
+                constraints_response,
+                field,
+                state["doc_category"],
+            )
+            response, usage = run_chat_inference(
+                model,
+                tokenizer,
+                prompt,
+                max_new_tokens=500,
+                return_usage=True,
+            )
+            extraction["engine_metrics"]["prompt_tokens"] += usage["prompt_tokens"]
+            extraction["engine_metrics"]["completion_tokens"] += usage["completion_tokens"]
+            extraction["engine_metrics"]["total_tokens"] += usage["total_tokens"]
+
+            try:
+                parsed = json.loads(extract_json_block(response))
+                extraction["field_extraction"][field] = parsed.get("field_extraction", "")
+                extraction["evidence_trace"][field] = parsed.get("evidence_trace", "")
+                extraction["reasoning"][field] = parsed.get(
+                    "reasoning",
+                    "No sufficiently supported value was found for this field.",
+                )
+            except Exception:
+                extraction["field_extraction"][field] = ""
+                extraction["evidence_trace"][field] = ""
+                extraction["reasoning"][field] = "No sufficiently supported value was found for this field."
+
+        extraction["engine_metrics"]["elapsed_seconds"] = round(time.time() - extraction_started_at, 4)
+    finally:
+        release_model(model, tokenizer)
+
+    maybe_save_text(
+        constraints_response,
+        f"{state['base_name']}_{engine_name}_constraints.txt",
+        state["debug"],
+        state["output_dir"],
+    )
+    maybe_save_json(
+        extraction,
+        f"{state['base_name']}_{engine_name}_extraction.json",
+        state["debug"],
+        state["output_dir"],
+    )
+
+    constraints = dict(state.get("constraints", {}))
+    constraints[engine_name] = constraints_response
+    extractions = dict(state.get("extractions", {}))
+    extractions[engine_name] = extraction
+    return {"constraints": constraints, "extractions": extractions}
+
+
+def constraints_and_extraction_engine_a_node(state: PipelineState) -> PipelineState:
+    with tracing_service.span("constraints_and_extraction_engineA_node"):
+        return _run_constraints_and_extraction_for_engine(
+            state,
+            engine_name="engineA",
+            model_path=ENGINE_A_PATH,
+            build_constraints_prompt=build_constraints_prompt_a,
+        )
+
+
+def constraints_and_extraction_engine_b_node(state: PipelineState) -> PipelineState:
+    with tracing_service.span("constraints_and_extraction_engineB_node"):
+        return _run_constraints_and_extraction_for_engine(
+            state,
+            engine_name="engineB",
+            model_path=ENGINE_B_PATH,
+            build_constraints_prompt=build_constraints_prompt_b,
+        )
+
+
 def rule_synthesis_node(state: PipelineState) -> PipelineState:
     prompt = build_rule_synthesis_prompt(
         state["constraints"]["engineA"],
@@ -80,6 +181,115 @@ def rule_synthesis_node(state: PipelineState) -> PipelineState:
         state["output_dir"],
     )
     return {"consolidated_rules": consolidated_rules}
+
+
+def _run_eval_block(state: PipelineState) -> PipelineState:
+    tokenizer, model = load_model_and_tokenizer(EVAL_MODEL_PATH)
+    try:
+        rule_prompt = build_rule_synthesis_prompt(
+            state["constraints"]["engineA"],
+            state["constraints"]["engineB"],
+            state["doc_category"],
+            state["fields"],
+        )
+        rule_response = run_chat_inference(model, tokenizer, rule_prompt, max_new_tokens=800)
+        consolidated_rules = json.loads(extract_json_block(rule_response))
+        maybe_save_json(
+            consolidated_rules,
+            f"{state['base_name']}_eval_constraints.json",
+            state["debug"],
+            state["output_dir"],
+        )
+
+        self_justifications = {}
+        for engine_name in ("engineA", "engineB"):
+            extraction = state["extractions"][engine_name]
+            engine_metrics = extraction.get("engine_metrics", {})
+            engine_result = {
+                "engine": engine_name,
+                "engine_metrics": engine_metrics,
+                "field_results": {},
+            }
+
+            for field in state["fields"]:
+                extracted_value = extraction["field_extraction"][field]
+                evidence_text = extraction["evidence_trace"][field]
+                reasoning_text = extraction["reasoning"][field]
+                rules = consolidated_rules["consolidated_rules"][field]
+                run_sanity_check(extracted_value)
+
+                prompt = build_stage2_prompt(
+                    field_name=field,
+                    rules=rules,
+                    extracted_value=extracted_value,
+                    evidence_text=evidence_text,
+                    reasoning_text=reasoning_text,
+                    ocr_raw_text=state["raw_text"],
+                    doc_category=state["doc_category"],
+                )
+                response = run_chat_inference(model, tokenizer, prompt, max_new_tokens=600)
+                engine_result["field_results"][field] = {
+                    **json.loads(extract_json_block(response)),
+                    "engine_metrics": engine_metrics,
+                }
+
+            maybe_save_json(
+                engine_result,
+                f"{state['base_name']}_{engine_name}_self_judge.json",
+                state["debug"],
+                state["output_dir"],
+            )
+            self_justifications[engine_name] = engine_result
+
+        stage3 = {"field_results": {}}
+        for field in state["fields"]:
+            engine_a_result = self_justifications["engineA"]["field_results"][field]
+            engine_b_result = self_justifications["engineB"]["field_results"][field]
+            rules = consolidated_rules["consolidated_rules"][field]
+            prompt = build_cross_judge_prompt(
+                field,
+                rules,
+                engine_a_result,
+                engine_b_result,
+                state["doc_category"],
+            )
+            response = run_chat_inference(model, tokenizer, prompt, max_new_tokens=600)
+            judged = json.loads(extract_json_block(response))
+
+            engine_a_metrics = self_justifications["engineA"].get("engine_metrics", {})
+            engine_b_metrics = self_justifications["engineB"].get("engine_metrics", {})
+            selected_engine = judged.get("selected_engine", "")
+            selected_metrics = {}
+            if selected_engine == "engineA":
+                selected_metrics = engine_a_metrics
+            elif selected_engine == "engineB":
+                selected_metrics = engine_b_metrics
+
+            stage3["field_results"][field] = {
+                "recommended_value": judged.get("recommended_value", ""),
+                "selected_engine": selected_engine,
+                "selection_reason": judged.get("selection_reason", ""),
+                "selected_engine_total_tokens": selected_metrics.get("total_tokens", 0),
+                "selected_engine_elapsed_seconds": selected_metrics.get("elapsed_seconds", 0.0),
+                "final_rule_consistency": judged.get("final_rule_consistency", ""),
+                "final_engine_self_consistency": judged.get("final_engine_self_consistency", ""),
+                "final_ocr_alignment": judged.get("final_ocr_alignment", ""),
+                "final_ocr_corruption": judged.get("final_ocr_corruption", ""),
+                "field_confidence": judged.get("field_confidence", ""),
+                "field_state": judged.get("field_state", ""),
+                "state_reason": judged.get("state_reason", ""),
+                "engineA_evidence": state["extractions"]["engineA"]["evidence_trace"].get(field, ""),
+                "engineB_evidence": state["extractions"]["engineB"]["evidence_trace"].get(field, ""),
+            }
+
+        maybe_save_json(stage3, f"{state['base_name']}_cross_judge.json", state["debug"], state["output_dir"])
+        return {
+            "consolidated_rules": consolidated_rules,
+            "self_justifications": self_justifications,
+            "cross_result": stage3,
+        }
+    finally:
+        release_model(model, tokenizer)
 
 
 def _run_extraction_for_engine(state: PipelineState, engine_name: str, model_path: str) -> PipelineState:
@@ -258,6 +468,11 @@ def cross_judgment_node(state: PipelineState) -> PipelineState:
 
     maybe_save_json(stage3, f"{state['base_name']}_cross_judge.json", state["debug"], state["output_dir"])
     return {"cross_result": stage3}
+
+
+def eval_block_node(state: PipelineState) -> PipelineState:
+    with tracing_service.span("eval_block_node"):
+        return _run_eval_block(state)
 
 
 def visualize_node(state: PipelineState) -> PipelineState:
