@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Download, Image as ImageIcon, Sparkles } from "lucide-react";
+import { useTheme } from "next-themes";
 import { toast } from "sonner";
 import { adaptBackendRunResponse } from "./adapters";
 import { runPipelineFromPath, runPipelineUpload } from "./api";
@@ -12,11 +13,14 @@ import { UploadSection } from "./components/UploadSection";
 import { Badge } from "./components/ui/badge";
 import { Button } from "./components/ui/button";
 import { Toaster } from "./components/ui/sonner";
+import { dark, light } from "./tokens";
 import type { FieldResult, PipelineStep, RunResult } from "./types";
 
 const DEFAULT_FIELDS = ["company", "date", "address", "total", "phone number"];
 
 export default function App() {
+  const { resolvedTheme } = useTheme();
+  const tokens = resolvedTheme === "dark" ? dark : light;
   const [isRunning, setIsRunning] = useState(false);
   const [currentStep, setCurrentStep] = useState<PipelineStep | null>(null);
   const [result, setResult] = useState<RunResult | null>(null);
@@ -129,6 +133,7 @@ export default function App() {
         isCollapsed={sidebarCollapsed}
         onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
         onNewChat={handleNewChat}
+        tokens={tokens}
       />
 
       <div className="flex-1 flex flex-col min-w-0">
@@ -197,6 +202,7 @@ export default function App() {
                 debugMode={debugMode}
                 onDebugModeChange={setDebugMode}
                 canRun={!!canRun}
+                tokens={tokens}
               />
             </div>
           </div>
@@ -239,9 +245,9 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    {sortedFields.map((field) => (
-                      <ModernFieldCard key={field.field_name} field={field} onClick={() => setSelectedField(field)} />
+                    <div className="grid grid-cols-2 gap-4">
+                      {sortedFields.map((field) => (
+                      <ModernFieldCard key={field.field_name} field={field} onClick={() => setSelectedField(field)} tokens={tokens} />
                     ))}
                   </div>
 
