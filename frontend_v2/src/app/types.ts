@@ -11,6 +11,13 @@ export interface FieldSignals {
   final_ocr_corruption: number;
 }
 
+export interface FieldSignalLabels {
+  final_rule_consistency: string;
+  final_engine_self_consistency: string;
+  final_ocr_alignment: string;
+  final_ocr_corruption: string;
+}
+
 export interface EngineExtraction {
   extracted_value: string;
   rule_consistency: number;
@@ -35,6 +42,7 @@ export interface FieldResult {
   selected_engine_total_tokens?: number;
   selected_engine_elapsed_seconds?: number;
   signals: FieldSignals;
+  signal_labels: FieldSignalLabels;
   engineA: EngineExtraction;
   engineB: EngineExtraction;
 }

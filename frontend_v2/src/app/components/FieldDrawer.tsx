@@ -25,6 +25,8 @@ const ScoreBar = ({ val, inv = false, t }: { val: number; inv?: boolean; t: Toke
   );
 };
 
+const formatSignalLabel = (value: string) => value.replaceAll("_", " ").toUpperCase();
+
 export function FieldDrawer({ field, open, onClose }: Props) {
   const { theme } = useTheme();
   const t = theme === "dark" ? dark : light;
@@ -126,14 +128,33 @@ export function FieldDrawer({ field, open, onClose }: Props) {
             <span style={sectionTitle}>Signal Analysis</span>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
               {[
-                { label: "Rule Consistency", val: field.signals.final_rule_consistency },
-                { label: "Self-Consistency", val: field.signals.final_engine_self_consistency },
-                { label: "OCR Alignment", val: field.signals.final_ocr_alignment },
-                { label: "OCR Corruption", val: field.signals.final_ocr_corruption, inv: true },
-              ].map(({ label, val, inv }) => (
+                {
+                  label: "Rule Consistency",
+                  val: field.signals.final_rule_consistency,
+                  display: field.signal_labels.final_rule_consistency,
+                },
+                {
+                  label: "Self-Consistency",
+                  val: field.signals.final_engine_self_consistency,
+                  display: field.signal_labels.final_engine_self_consistency,
+                },
+                {
+                  label: "OCR Alignment",
+                  val: field.signals.final_ocr_alignment,
+                  display: field.signal_labels.final_ocr_alignment,
+                },
+                {
+                  label: "OCR Corruption",
+                  val: field.signals.final_ocr_corruption,
+                  display: field.signal_labels.final_ocr_corruption,
+                  inv: true,
+                },
+              ].map(({ label, val, display, inv }) => (
                 <div key={label} style={card}>
                   <div style={{ fontSize: "10px", color: t.textMuted, letterSpacing: "0.08em", marginBottom: "8px", textTransform: "uppercase" }}>{label}</div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: "20px", color: t.text, marginBottom: "8px" }}>{val.toFixed(2)}</div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: "20px", color: t.text, marginBottom: "8px" }}>
+                    {formatSignalLabel(display)}
+                  </div>
                   <ScoreBar val={val} inv={inv} t={t} />
                 </div>
               ))}

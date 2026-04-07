@@ -302,7 +302,7 @@ function AppShell() {
                   }}
                   onClick={exportAnalysisArtifacts}
                 >
-                  <Download size={11} /> Export
+                  <Download size={11} /> Export Results
                 </button>
               </>
             )}

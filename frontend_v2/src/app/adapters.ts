@@ -72,6 +72,12 @@ export function adaptBackendRunResponse(payload: BackendRunResponse): RunResult 
         final_ocr_alignment: scoreFromLevel(field.final_ocr_alignment),
         final_ocr_corruption: scoreFromLevel(field.final_ocr_corruption),
       },
+      signal_labels: {
+        final_rule_consistency: field.final_rule_consistency,
+        final_engine_self_consistency: field.final_engine_self_consistency,
+        final_ocr_alignment: field.final_ocr_alignment,
+        final_ocr_corruption: field.final_ocr_corruption,
+      },
       engineA,
       engineB,
     } satisfies FieldResult;

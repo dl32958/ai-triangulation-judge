@@ -76,7 +76,7 @@ export function ExplainDebugDrawer({ result }: ExplainDebugDrawerProps) {
             className="w-full h-12 flex items-center justify-between px-6 hover:bg-gray-50 dark:hover:bg-gray-900 text-base font-semibold"
           >
             <span>Technical Details & Debug Info</span>
-            <ChevronUp className={`h-5 w-5 transition-transform ${isOpen ? "" : "rotate-180"}`} />
+            <ChevronUp className={`h-5 w-5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
           </Button>
         </CollapsibleTrigger>
 
