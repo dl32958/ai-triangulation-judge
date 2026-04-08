@@ -30,8 +30,11 @@ venv/
 dataset/
 outputs_engine_b/
 data/temp/
-data/uploads/
-data/artifacts/debug/
-data/artifacts/annotated/
+data/uploads/*
+!data/uploads/.gitkeep
+data/artifacts/debug/*
+!data/artifacts/debug/.gitkeep
+data/artifacts/annotated/*
+!data/artifacts/annotated/.gitkeep
 
 output/
