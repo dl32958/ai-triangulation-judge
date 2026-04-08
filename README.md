@@ -29,6 +29,22 @@ The project was developed and evaluated in the Northeastern University (NEU) HPC
 - Annotated artifact export and structured debug retrieval
 - Full-stack interface with a React frontend and FastAPI backend
 
+## Screenshots
+
+### Main Interface
+
+![Main interface](screenshots/interface.jpg)
+
+### Analysis Results
+
+![Analysis results](screenshots/result.jpg)
+
+### Debug View
+
+![Debug view](screenshots/debug1.jpg)
+
+Additional screenshots are available in the [`screenshots/`](screenshots/) directory.
+
 ## System Architecture
 
 At a high level, the system consists of:
