@@ -175,8 +175,11 @@ ENGINE B OUTPUT
 """.strip()
 
 
+"""
+Previous build_stage2_prompt version kept for reference.
+
 def build_stage2_prompt(field_name, rules, extracted_value, evidence_text, reasoning_text, ocr_raw_text, doc_category):
-    return f"""
+    return f\"\"\"
 You are an evaluation model for {doc_category} field extraction reliability.
 
 Your job is to evaluate whether the extracted value for one field is credible.
@@ -255,6 +258,117 @@ Examples:
 Important:
 - OCR corruption does NOT automatically mean the value is wrong.
 - A value may still be partially usable even if OCR corruption is present.
+- Focus on whether corruption is absent, possible, or clearly present.
+
+5. judgment_summary:
+Write one short summary sentence explaining the overall credibility of the extracted value.
+The summary must be consistent with the other output fields.
+Do not introduce new evidence or new conclusions beyond:
+- rule_consistency
+- engine_self_consistency
+- ocr_alignment
+- ocr_corruption
+
+Return JSON in exactly this format:
+
+{{
+  "extracted_value": "",
+  "rule_consistency": "high | moderate | low",
+  "engine_self_consistency": "strong | moderate | weak",
+  "ocr_alignment": "strong | partial | weak",
+  "ocr_corruption": "absent | possible | present",
+  "judgment_summary": ""
+}}
+\"\"\".strip()
+"""
+
+
+def build_stage2_prompt(field_name, rules, extracted_value, evidence_text, reasoning_text, ocr_raw_text, doc_category):
+    return f"""
+You are an evaluation model for {doc_category} field extraction reliability.
+
+Your job is to evaluate whether the extracted value for one field is credible.
+
+Return ONLY valid JSON. No explanation.
+
+Field name:
+{field_name}
+
+Consolidated validation rules:
+{json.dumps(rules, indent=2, ensure_ascii=False)}
+
+Extracted value:
+{extracted_value}
+
+Evidence trace:
+{evidence_text}
+
+Engine reasoning:
+{reasoning_text}
+
+OCR raw text:
+{ocr_raw_text}
+
+Evaluation definitions:
+1. rule_consistency:
+How well the extracted value matches the consolidated validation rules for this field.
+
+2. engine_self_consistency:
+How well the engine's evidence trace and reasoning support its own extracted value.
+
+3. ocr_alignment:
+How well the extracted value is grounded in OCR raw text with the correct local semantic context for the target field.
+
+Use the following scale:
+- strong: the value is clearly grounded in OCR text, and the surrounding OCR context strongly supports that it belongs to the target field.
+- partial: the value has some OCR support, but the surrounding OCR context is incomplete, ambiguous, noisy, or only indirectly supportive.
+- weak: the value is ungrounded, mismatched, coincidental, or supported by the wrong context.
+
+4. ocr_corruption:
+Whether the extracted value itself appears to contain OCR corruption.
+
+Judge OCR corruption mainly from the extracted value string itself.
+Focus on visible recognition artifacts in the text form, not just on whether the overall meaning seems plausible.
+OCR corruption includes not only obvious symbol noise, but also structurally damaged text that no longer looks like a clean, well-formed date, company name, address, or other field value.
+
+Use the following scale:
+- absent: no obvious OCR corruption is present; the value appears clean, readable, and textually well-formed.
+- possible: mild or uncertain OCR corruption may be present; the value is still partly readable, but some segments, characters, symbols, or formatting patterns are questionable.
+- present: obvious OCR corruption is present; the value contains clear recognition artifacts such as unexpected "?" characters, broken segments, unusual symbol substitutions, merged fragments, or corrupted text that makes the semantic meaning unclear.
+
+General hints:
+- Unexpected "?" characters inside a word, number, or phrase are strong evidence of OCR corruption.
+- Strange symbol substitutions, broken fragments, or malformed character sequences may indicate OCR corruption even if part of the value is still readable.
+- For structured values such as dates, IDs, phone numbers, or totals, missing separators, merged segments, or broken formatting may indicate OCR corruption even when most characters are still readable.
+- For natural-language fields such as company names or addresses, OCR corruption may appear as broken words, abnormal token fragments, malformed parentheses, or text that is readable in parts but no longer resembles a normal entity name or phrase.
+- A value can still be semantically plausible while being OCR-corrupted.
+- Clean punctuation alone does not imply corruption.
+- Normal delimiters such as commas, periods, slashes, hyphens, ampersands, or parentheses are not OCR corruption by themselves.
+
+Examples:
+- absent:
+  "2023-08-15"
+  "12/02/2018"
+  "123 Main Street"
+  "S.H.H. MOTOR ( SUNGAI RENGIT ) SDN. BHD."
+  "Total: 45.90"
+- possible:
+  "1202/2018"
+  "12/022018"
+  "2O23-08-15"
+  "123 Main Stree1"
+  "S.H.H. MOTOR ( SUN(GAI RENGIT ) S0N. B(HD."
+  "Tota1: 45.90"
+- present:
+  "2O?3-0?15"
+  "123 Ma?n Str?et"
+  "MITER 8 (a (wu UNGAL RENGTT ) SON, Bt"
+  "To?al: 4?.9O"
+
+Important:
+- OCR corruption does NOT automatically mean the value is wrong.
+- A value may still be partially usable even if OCR corruption is present.
+- A value may remain partially readable while still being OCR-corrupted if its wording is visibly broken, malformed, or unlike a normal instance of the target field.
 - Focus on whether corruption is absent, possible, or clearly present.
 
 5. judgment_summary:
